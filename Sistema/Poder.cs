@@ -53,5 +53,14 @@ namespace Sistema
             get { return costoVol; }
         }
 
+        public string Nombre
+        {
+            get { return nombre; }
+        }
+        public string Descripcion
+        {
+            get { return descripcion; }
+        }
+
     }
 }

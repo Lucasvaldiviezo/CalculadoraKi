@@ -73,6 +73,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.btnAplicar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
+            this.comboBoxPoderes = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lblAgi
@@ -529,11 +530,20 @@
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
+            // comboBoxPoderes
+            // 
+            this.comboBoxPoderes.FormattingEnabled = true;
+            this.comboBoxPoderes.Location = new System.Drawing.Point(551, 31);
+            this.comboBoxPoderes.Name = "comboBoxPoderes";
+            this.comboBoxPoderes.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxPoderes.TabIndex = 53;
+            // 
             // VentanaKi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 556);
+            this.Controls.Add(this.comboBoxPoderes);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.btnAplicar);
             this.Controls.Add(this.label6);
@@ -634,6 +644,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnAplicar;
         private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.ComboBox comboBoxPoderes;
     }
 }
 

@@ -26,8 +26,6 @@ namespace VentanaKi
         
         private void btnCargar_Click(object sender, EventArgs e)
         {
-        
-           
             jugador.CargarKi();
             txtAgiActual.Text = jugador.Agilidad.ToString();
             txtConActual.Text = jugador.Constitucion.ToString();
@@ -35,7 +33,6 @@ namespace VentanaKi
             txtFueActual.Text = jugador.Fuerza.ToString();
             txtPodActual.Text = jugador.Poder.ToString();
             txtVolActual.Text = jugador.Voluntad.ToString();
-           
         }
 
         private void btnAplicar_Click(object sender, EventArgs e)
@@ -76,8 +73,13 @@ namespace VentanaKi
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            Form ventanaPoderes = new VentanaPoderes();
+            Form ventanaPoderes = new VentanaPoderes(nuevoPoder);
             DialogResult result = ventanaPoderes.ShowDialog();
+
+            if(result == DialogResult.OK)
+            {
+                comboBoxPoderes.Items.Add(nuevoPoder.Nombre);
+            }
         }
     }
 }

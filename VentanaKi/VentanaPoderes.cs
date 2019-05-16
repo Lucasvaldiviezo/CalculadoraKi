@@ -18,6 +18,12 @@ namespace VentanaKi
             InitializeComponent();
         }
 
+        private Poder nuevoPoder;
+
+        public VentanaPoderes(Poder nuevoPoder) :this()
+        {
+            this.nuevoPoder = nuevoPoder;
+        }
         private void btnCrear_Click(object sender, EventArgs e)
         {
             string nombre;
@@ -34,10 +40,13 @@ namespace VentanaKi
                 pod = Convert.ToDouble(txtPod.Text);
                 vol = Convert.ToDouble(txtVol.Text);
                 descripcion = richTextBoxDescripcion.Text; 
-                Poder nuevoPoder = new Poder(nombre, descripcion, agi, con, des, fue, pod, vol);
-                VentanaKi(nuevoPoder);
+                nuevoPoder = new Poder(nombre, descripcion, agi, con, des, fue, pod, vol);
+                
                 this.DialogResult = DialogResult.OK;
                 this.Close();
+            }else
+            {
+                MessageBox.Show("No deje ningun campo vacio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
