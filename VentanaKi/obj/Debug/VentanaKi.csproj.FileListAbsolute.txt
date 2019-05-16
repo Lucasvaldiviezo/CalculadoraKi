@@ -11,3 +11,4 @@ C:\Users\Usuario\Desktop\CalculadoraKi\VentanaKi\obj\Debug\VentanaKi.pdb
 C:\Users\Usuario\Desktop\CalculadoraKi\VentanaKi\bin\Debug\Sistema.dll
 C:\Users\Usuario\Desktop\CalculadoraKi\VentanaKi\bin\Debug\Sistema.pdb
 C:\Users\Usuario\Desktop\CalculadoraKi\VentanaKi\obj\Debug\VentanaKi.csproj.CopyComplete
+C:\Users\Usuario\Desktop\CalculadoraKi\VentanaKi\obj\Debug\VentanaKi.VentanaPoderes.resources

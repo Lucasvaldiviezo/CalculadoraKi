@@ -20,8 +20,10 @@ namespace VentanaKi
         }
 
 
-        public Ki jugador;
+        private Ki jugador;
+        private Poder nuevoPoder;
 
+        
         private void btnCargar_Click(object sender, EventArgs e)
         {
         
@@ -43,113 +45,39 @@ namespace VentanaKi
             double agiMaximo, conMaximo, desMaximo, fueMaximo, podMaximo, volMaximo;
             //Cargando Stats de Carga
             #region statscarga
-            if (txtAgi.Text != "")
+            if (txtAgi.Text != "" && txtCon.Text != "" && txtDes.Text != "" && txtFue.Text != "" && txtPod.Text != "" && txtVol.Text != "" && txtKiTotal.Text != "" 
+                && txtAgiMaximo.Text != "" && txtConMaximo.Text != "" && txtDesMaximo.Text != "" && txtFueMaximo.Text != "" && txtPodMaximo.Text != "" && txtVolMaximo.Text != "")
             {
                 agi = Convert.ToDouble(txtAgi.Text);
-            }
-            else
-            {
-                agi = 0;
-            }
-            if (txtCon.Text != "")
-            {
                 con = Convert.ToDouble(txtCon.Text);
-            }
-            else
-            {
-                con = 0;
-            }
-            if (txtDes.Text != "")
-            {
                 des = Convert.ToDouble(txtDes.Text);
-            }
-            else
-            {
-                des = 0;
-            }
-            if (txtFue.Text != "")
-            {
                 fue = Convert.ToDouble(txtFue.Text);
-            }
-            else
-            {
-                fue = 0;
-            }
-            if (txtPod.Text != "")
-            {
                 pod = Convert.ToDouble(txtPod.Text);
-            }
-            else
-            {
-                pod = 0;
-            }
-            if (txtVol.Text != "")
-            {
                 vol = Convert.ToDouble(txtVol.Text);
-            }
-            else
-            {
-                vol = 0;
-            }
-            #endregion
-            //Cargando Stats de Maximo
-            #region maximos
-            if (txtKiTotal.Text != "")
-            {
                 totalKi = Convert.ToDouble(txtKiTotal.Text);
-            }else
-            {
-                totalKi = 0;
-            }
-            if(txtAgiMaximo.Text != "")
-            {
                 agiMaximo = Convert.ToDouble(txtAgiMaximo.Text);
-            }else
-            {
-                agiMaximo = 0;
-            }
-            if (txtConMaximo.Text != "")
-            {
                 conMaximo = Convert.ToDouble(txtConMaximo.Text);
-            }
-            else
-            {
-                conMaximo = 0;
-            }
-            if (txtDesMaximo.Text != "")
-            {
                 desMaximo = Convert.ToDouble(txtDesMaximo.Text);
-            }
-            else
-            {
-                desMaximo = 0;
-            }
-            if (txtFueMaximo.Text != "")
-            {
                 fueMaximo = Convert.ToDouble(txtFueMaximo.Text);
-            }
-            else
-            {
-                fueMaximo = 0;
-            }
-            if(txtPodMaximo.Text != "")
-            {
                 podMaximo = Convert.ToDouble(txtPodMaximo.Text);
-            }else
-            {
-                podMaximo = 0;
-            }
-            if (txtVolMaximo.Text != "")
-            {
                 volMaximo = Convert.ToDouble(txtVolMaximo.Text);
+                jugador = new Ki(totalKi, agiMaximo, conMaximo, desMaximo, fueMaximo, podMaximo, volMaximo, agi, con, des, fue, pod, vol);
+                MessageBox.Show("Las Stats estan aplicadas", "Cambios Aplicados", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                volMaximo = 0;
+                MessageBox.Show("No deje ningun campo vacio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             #endregion
-            jugador = new Ki(totalKi,agiMaximo,conMaximo,desMaximo,fueMaximo,podMaximo,volMaximo,agi,con,des,fue,pod,vol);
-            MessageBox.Show("Las Stats estan aplicadas", "Cambios Aplicados", MessageBoxButtons.OK, MessageBoxIcon.Information); 
+            //Cargando Stats de Maximo        
+            
+            
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            Form ventanaPoderes = new VentanaPoderes();
+            DialogResult result = ventanaPoderes.ShowDialog();
         }
     }
 }

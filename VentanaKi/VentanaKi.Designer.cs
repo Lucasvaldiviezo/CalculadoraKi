@@ -72,6 +72,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btnAplicar = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblAgi
@@ -205,7 +206,7 @@
             // 
             // btnCargar
             // 
-            this.btnCargar.Location = new System.Drawing.Point(200, 440);
+            this.btnCargar.Location = new System.Drawing.Point(216, 503);
             this.btnCargar.Name = "btnCargar";
             this.btnCargar.Size = new System.Drawing.Size(75, 41);
             this.btnCargar.TabIndex = 19;
@@ -291,7 +292,7 @@
             // txtKiTotal
             // 
             this.txtKiTotal.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKiTotal.Location = new System.Drawing.Point(661, 213);
+            this.txtKiTotal.Location = new System.Drawing.Point(119, 440);
             this.txtKiTotal.Multiline = true;
             this.txtKiTotal.Name = "txtKiTotal";
             this.txtKiTotal.Size = new System.Drawing.Size(97, 38);
@@ -301,10 +302,10 @@
             // lblKiTotal
             // 
             this.lblKiTotal.AutoSize = true;
-            this.lblKiTotal.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKiTotal.Location = new System.Drawing.Point(683, 189);
+            this.lblKiTotal.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKiTotal.Location = new System.Drawing.Point(41, 450);
             this.lblKiTotal.Name = "lblKiTotal";
-            this.lblKiTotal.Size = new System.Drawing.Size(51, 16);
+            this.lblKiTotal.Size = new System.Drawing.Size(66, 19);
             this.lblKiTotal.TabIndex = 28;
             this.lblKiTotal.Text = "Ki Total";
             // 
@@ -510,7 +511,7 @@
             // 
             // btnAplicar
             // 
-            this.btnAplicar.Location = new System.Drawing.Point(343, 440);
+            this.btnAplicar.Location = new System.Drawing.Point(349, 503);
             this.btnAplicar.Name = "btnAplicar";
             this.btnAplicar.Size = new System.Drawing.Size(75, 41);
             this.btnAplicar.TabIndex = 51;
@@ -518,11 +519,22 @@
             this.btnAplicar.UseVisualStyleBackColor = true;
             this.btnAplicar.Click += new System.EventHandler(this.btnAplicar_Click);
             // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Location = new System.Drawing.Point(700, 20);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(75, 41);
+            this.btnAgregar.TabIndex = 52;
+            this.btnAgregar.Text = "Agregar Poder";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
             // VentanaKi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 493);
+            this.ClientSize = new System.Drawing.Size(800, 556);
+            this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.btnAplicar);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -621,6 +633,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnAplicar;
+        private System.Windows.Forms.Button btnAgregar;
     }
 }
 
