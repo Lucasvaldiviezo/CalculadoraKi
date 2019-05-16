@@ -1,0 +1,6 @@
+C:\Users\Usuario\Desktop\CalculadoraKi\Sistema\bin\Debug\Sistema.dll
+C:\Users\Usuario\Desktop\CalculadoraKi\Sistema\bin\Debug\Sistema.pdb
+C:\Users\Usuario\Desktop\CalculadoraKi\Sistema\obj\Debug\Sistema.csprojAssemblyReference.cache
+C:\Users\Usuario\Desktop\CalculadoraKi\Sistema\obj\Debug\Sistema.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\CalculadoraKi\Sistema\obj\Debug\Sistema.dll
+C:\Users\Usuario\Desktop\CalculadoraKi\Sistema\obj\Debug\Sistema.pdb

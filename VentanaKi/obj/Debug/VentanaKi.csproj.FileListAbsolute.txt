@@ -1,0 +1,13 @@
+C:\Users\Usuario\Desktop\CalculadoraKi\VentanaKi\bin\Debug\VentanaKi.exe.config
+C:\Users\Usuario\Desktop\CalculadoraKi\VentanaKi\bin\Debug\VentanaKi.exe
+C:\Users\Usuario\Desktop\CalculadoraKi\VentanaKi\bin\Debug\VentanaKi.pdb
+C:\Users\Usuario\Desktop\CalculadoraKi\VentanaKi\obj\Debug\VentanaKi.csprojAssemblyReference.cache
+C:\Users\Usuario\Desktop\CalculadoraKi\VentanaKi\obj\Debug\VentanaKi.Properties.Resources.resources
+C:\Users\Usuario\Desktop\CalculadoraKi\VentanaKi\obj\Debug\VentanaKi.VentanaKi.resources
+C:\Users\Usuario\Desktop\CalculadoraKi\VentanaKi\obj\Debug\VentanaKi.csproj.GenerateResource.cache
+C:\Users\Usuario\Desktop\CalculadoraKi\VentanaKi\obj\Debug\VentanaKi.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\CalculadoraKi\VentanaKi\obj\Debug\VentanaKi.exe
+C:\Users\Usuario\Desktop\CalculadoraKi\VentanaKi\obj\Debug\VentanaKi.pdb
+C:\Users\Usuario\Desktop\CalculadoraKi\VentanaKi\bin\Debug\Sistema.dll
+C:\Users\Usuario\Desktop\CalculadoraKi\VentanaKi\bin\Debug\Sistema.pdb
+C:\Users\Usuario\Desktop\CalculadoraKi\VentanaKi\obj\Debug\VentanaKi.csproj.CopyComplete

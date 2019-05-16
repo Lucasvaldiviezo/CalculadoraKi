@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.572
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VentanaKi", "VentanaKi\VentanaKi.csproj", "{1D59D423-3EAF-44CF-9E7C-EC37EC82ABE8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sistema", "Sistema\Sistema.csproj", "{5E562678-CE25-4424-9AD3-9BC9A29650B5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1D59D423-3EAF-44CF-9E7C-EC37EC82ABE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D59D423-3EAF-44CF-9E7C-EC37EC82ABE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D59D423-3EAF-44CF-9E7C-EC37EC82ABE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D59D423-3EAF-44CF-9E7C-EC37EC82ABE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E562678-CE25-4424-9AD3-9BC9A29650B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E562678-CE25-4424-9AD3-9BC9A29650B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E562678-CE25-4424-9AD3-9BC9A29650B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E562678-CE25-4424-9AD3-9BC9A29650B5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {25AFC7BA-B40C-4B75-AE7E-3854872806FA}
+	EndGlobalSection
+EndGlobal
