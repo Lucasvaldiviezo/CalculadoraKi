@@ -11,8 +11,10 @@ namespace Sistema
         private double actualAgi, actualCon, actualDes, actualFue, actualPod, actualVol;
         private double totalKi;
         private double agiMaximo, conMaximo, desMaximo, fueMaximo, podMaximo, volMaximo;
+        private double agiCarga, conCarga, desCarga, fueCarga, podCarga, volCarga;
 
-        /*public Ki(double totalKi, double agiMaximo, double conMaximo, double desMaximo, double fueMaximo, double podMaximo, double volMaximo)
+        public Ki(double totalKi, double agiMaximo, double conMaximo, double desMaximo, double fueMaximo, double podMaximo, double volMaximo,
+                  double agiCarga, double conCarga, double desCarga, double fueCarga, double podCarga, double volCarga)
         {
             this.totalKi = totalKi;
             this.agiMaximo = agiMaximo;
@@ -21,7 +23,13 @@ namespace Sistema
             this.fueMaximo = fueMaximo;
             this.podMaximo = podMaximo;
             this.volMaximo = volMaximo;
-        }*/
+            this.agiCarga = agiCarga;
+            this.conCarga = conCarga;
+            this.desCarga = desCarga;
+            this.fueCarga = fueCarga;
+            this.podCarga = podCarga;
+            this.volCarga = volCarga;
+        }
         public double Agilidad
         {
             get { return actualAgi; }
@@ -47,23 +55,70 @@ namespace Sistema
             get { return actualVol; }
         }
 
-        public void CargarKi(double agi,double con, double des, double fue, double pod, double vol)
+        public void CargarKi()
         {
-            actualAgi += agi;
-            actualCon += con;
-            actualDes += des;
-            actualFue += fue;
-            actualPod += pod;
-            actualVol += vol;
+            if(ValidarCarga(agiCarga,actualAgi,agiMaximo))
+            {
+                actualAgi += agiCarga;
+            }else
+            {
+                actualAgi = agiMaximo;
+            }
+            if(ValidarCarga(conCarga,actualCon,conMaximo))
+            {
+                actualCon += conCarga;
+            }else
+            {
+                actualCon = conMaximo;
+            }
+            if(ValidarCarga(desCarga,actualDes,desMaximo))
+            {
+                actualDes += desCarga;
+            }else
+            {
+                actualDes = desMaximo;
+            }
+            if(ValidarCarga(fueCarga,actualFue,fueMaximo))
+            {
+                actualFue += fueCarga;
+            }else
+            {
+                actualFue = fueMaximo;
+            }
+            if(ValidarCarga(podCarga,actualPod,podMaximo))
+            {
+                actualPod += podCarga;
+            }else
+            {
+                actualPod = podMaximo;
+            }
+            if(ValidarCarga(volCarga,actualVol,volMaximo))
+            {
+                actualVol += volCarga;
+            }else
+            {
+                actualVol = volMaximo;
+            }   
         }
-        public void RestarKi(double agi, double con, double des, double fue, double pod, double vol)
+        public void RestarKi()
         {
-            actualAgi -= agi;
-            actualCon -= con;
-            actualDes -= des;
-            actualFue -= fue;
-            actualPod -= pod;
-            actualVol -= vol;
+            actualAgi -= agiCarga;
+            actualCon -= conCarga;
+            actualDes -= desCarga;
+            actualFue -= fueCarga;
+            actualPod -= podCarga;
+            actualVol -= volCarga;
+        }
+
+        public bool ValidarCarga(double carga,double actual, double maximo)
+        {
+            bool retorno = false;
+            if((actual + carga) <= maximo)
+            {
+                retorno = true;
+            }
+
+            return retorno;
         }
     }
 }

@@ -71,6 +71,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.btnAplicar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblAgi
@@ -289,6 +290,7 @@
             // 
             // txtKiTotal
             // 
+            this.txtKiTotal.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtKiTotal.Location = new System.Drawing.Point(661, 213);
             this.txtKiTotal.Multiline = true;
             this.txtKiTotal.Name = "txtKiTotal";
@@ -506,11 +508,22 @@
             this.label6.TabIndex = 50;
             this.label6.Text = "/";
             // 
+            // btnAplicar
+            // 
+            this.btnAplicar.Location = new System.Drawing.Point(343, 440);
+            this.btnAplicar.Name = "btnAplicar";
+            this.btnAplicar.Size = new System.Drawing.Size(75, 41);
+            this.btnAplicar.TabIndex = 51;
+            this.btnAplicar.Text = "Aplicar Cambios";
+            this.btnAplicar.UseVisualStyleBackColor = true;
+            this.btnAplicar.Click += new System.EventHandler(this.btnAplicar_Click);
+            // 
             // VentanaKi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 493);
+            this.Controls.Add(this.btnAplicar);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -607,6 +620,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnAplicar;
     }
 }
 
