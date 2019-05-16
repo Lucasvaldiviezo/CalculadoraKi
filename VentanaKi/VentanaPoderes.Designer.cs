@@ -179,7 +179,7 @@
             // 
             this.lblPod.AutoSize = true;
             this.lblPod.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPod.Location = new System.Drawing.Point(157, 345);
+            this.lblPod.Location = new System.Drawing.Point(158, 345);
             this.lblPod.Name = "lblPod";
             this.lblPod.Size = new System.Drawing.Size(44, 19);
             this.lblPod.TabIndex = 15;

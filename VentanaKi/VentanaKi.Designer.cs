@@ -74,6 +74,9 @@
             this.btnAplicar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.comboBoxPoderes = new System.Windows.Forms.ComboBox();
+            this.richTextBoxDescripcion = new System.Windows.Forms.RichTextBox();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.lblDescripcion = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblAgi
@@ -522,7 +525,7 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(700, 20);
+            this.btnAgregar.Location = new System.Drawing.Point(553, 42);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 41);
             this.btnAgregar.TabIndex = 52;
@@ -533,16 +536,47 @@
             // comboBoxPoderes
             // 
             this.comboBoxPoderes.FormattingEnabled = true;
-            this.comboBoxPoderes.Location = new System.Drawing.Point(551, 31);
+            this.comboBoxPoderes.Location = new System.Drawing.Point(532, 117);
             this.comboBoxPoderes.Name = "comboBoxPoderes";
             this.comboBoxPoderes.Size = new System.Drawing.Size(121, 21);
             this.comboBoxPoderes.TabIndex = 53;
+            // 
+            // richTextBoxDescripcion
+            // 
+            this.richTextBoxDescripcion.Location = new System.Drawing.Point(442, 178);
+            this.richTextBoxDescripcion.Name = "richTextBoxDescripcion";
+            this.richTextBoxDescripcion.Size = new System.Drawing.Size(307, 96);
+            this.richTextBoxDescripcion.TabIndex = 54;
+            this.richTextBoxDescripcion.Text = "";
+            // 
+            // lblNombre
+            // 
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.Location = new System.Drawing.Point(538, 98);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(112, 16);
+            this.lblNombre.TabIndex = 55;
+            this.lblNombre.Text = "Nombre del Poder";
+            // 
+            // lblDescripcion
+            // 
+            this.lblDescripcion.AutoSize = true;
+            this.lblDescripcion.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescripcion.Location = new System.Drawing.Point(552, 159);
+            this.lblDescripcion.Name = "lblDescripcion";
+            this.lblDescripcion.Size = new System.Drawing.Size(76, 16);
+            this.lblDescripcion.TabIndex = 56;
+            this.lblDescripcion.Text = "Descripcion";
             // 
             // VentanaKi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 556);
+            this.Controls.Add(this.lblDescripcion);
+            this.Controls.Add(this.lblNombre);
+            this.Controls.Add(this.richTextBoxDescripcion);
             this.Controls.Add(this.comboBoxPoderes);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.btnAplicar);
@@ -645,6 +679,9 @@
         private System.Windows.Forms.Button btnAplicar;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.ComboBox comboBoxPoderes;
+        private System.Windows.Forms.RichTextBox richTextBoxDescripcion;
+        private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.Label lblDescripcion;
     }
 }
 
