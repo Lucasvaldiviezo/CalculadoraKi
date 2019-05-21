@@ -90,15 +90,11 @@ namespace VentanaKi
             {
                 Form ventanaPoderes = new VentanaPoderes(jugador);
                 DialogResult result = ventanaPoderes.ShowDialog();
-
                 if (result == DialogResult.OK)
                 {
                     comboBoxPoderes.ResetText();
-                    foreach (Poder p in jugador.Poderes)
-                    {
-                        comboBoxPoderes.Items.Add(p.Nombre);
-                        comboBoxPoderes.SelectedText = p.Nombre;
-                    }
+                    comboBoxPoderes.Items.Add(jugador.nombreUltimoPoder());
+                  
                 }
             }else
             {

@@ -55,6 +55,11 @@ namespace Sistema
             return retorno;
         }
 
+        public string nombreUltimoPoder()
+        {
+            return Poderes.Last().Nombre;
+        }
+
         public static bool operator !=(Jugador jugador, Poder poder)
         {
             return !(jugador == poder);
