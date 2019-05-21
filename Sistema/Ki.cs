@@ -102,12 +102,31 @@ namespace Sistema
         }
         public void RestarKi()
         {
-            actualAgi -= agiCarga;
-            actualCon -= conCarga;
-            actualDes -= desCarga;
-            actualFue -= fueCarga;
-            actualPod -= podCarga;
-            actualVol -= volCarga;
+            if(actualAgi > 0)
+            {
+                actualAgi -= agiCarga;
+            }
+            if(actualCon > 0)
+            {
+                actualCon -= conCarga;
+            }
+            if(actualDes > 0)
+            {
+                actualDes -= desCarga;
+            }
+            if(actualFue > 0)
+            {
+                actualFue -= fueCarga;
+            }
+            if(actualPod > 0)
+            {
+                actualPod -= podCarga;
+            }
+            if(actualVol > 0)
+            {
+                actualVol -= volCarga;
+            }
+           
         }
 
         public bool ValidarCarga(double carga,double actual, double maximo)

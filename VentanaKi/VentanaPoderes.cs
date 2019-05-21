@@ -18,11 +18,13 @@ namespace VentanaKi
             InitializeComponent();
         }
 
+        private Jugador jugador;
         private Poder nuevoPoder;
 
-        public VentanaPoderes(Poder nuevoPoder) :this()
+
+        public VentanaPoderes(Jugador jugador) :this()
         {
-            this.nuevoPoder = nuevoPoder;
+            this.jugador = jugador;
         }
         private void btnCrear_Click(object sender, EventArgs e)
         {
@@ -41,7 +43,7 @@ namespace VentanaKi
                 vol = Convert.ToDouble(txtVol.Text);
                 descripcion = richTextBoxDescripcion.Text; 
                 nuevoPoder = new Poder(nombre, descripcion, agi, con, des, fue, pod, vol);
-                
+                jugador.AgregarPoder(nuevoPoder);
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }else

@@ -20,19 +20,20 @@ namespace VentanaKi
         }
 
 
-        private Ki jugador;
-        private Poder nuevoPoder;
+        private Jugador jugador;
+        private Ki miKi;
 
         
         private void btnCargar_Click(object sender, EventArgs e)
         {
-            jugador.CargarKi();
-            txtAgiActual.Text = jugador.Agilidad.ToString();
-            txtConActual.Text = jugador.Constitucion.ToString();
-            txtDesActual.Text = jugador.Destreza.ToString();
-            txtFueActual.Text = jugador.Fuerza.ToString();
-            txtPodActual.Text = jugador.Poder.ToString();
-            txtVolActual.Text = jugador.Voluntad.ToString();
+            jugador.KiPropio.CargarKi();
+            txtAgiActual.Text = jugador.KiPropio.Agilidad.ToString();
+            txtConActual.Text = jugador.KiPropio.Constitucion.ToString();
+            txtDesActual.Text = jugador.KiPropio.Destreza.ToString();
+            txtFueActual.Text = jugador.KiPropio.Fuerza.ToString();
+            txtPodActual.Text = jugador.KiPropio.Poder.ToString();
+            txtVolActual.Text = jugador.KiPropio.Voluntad.ToString();
+           
         }
 
         private void btnAplicar_Click(object sender, EventArgs e)
@@ -42,6 +43,7 @@ namespace VentanaKi
             double agiMaximo, conMaximo, desMaximo, fueMaximo, podMaximo, volMaximo;
             //Cargando Stats de Carga
             #region statscarga
+            
             if (txtAgi.Text != "" && txtCon.Text != "" && txtDes.Text != "" && txtFue.Text != "" && txtPod.Text != "" && txtVol.Text != "" && txtKiTotal.Text != "" 
                 && txtAgiMaximo.Text != "" && txtConMaximo.Text != "" && txtDesMaximo.Text != "" && txtFueMaximo.Text != "" && txtPodMaximo.Text != "" && txtVolMaximo.Text != "")
             {
@@ -58,7 +60,9 @@ namespace VentanaKi
                 fueMaximo = Convert.ToDouble(txtFueMaximo.Text);
                 podMaximo = Convert.ToDouble(txtPodMaximo.Text);
                 volMaximo = Convert.ToDouble(txtVolMaximo.Text);
-                jugador = new Ki(totalKi, agiMaximo, conMaximo, desMaximo, fueMaximo, podMaximo, volMaximo, agi, con, des, fue, pod, vol);
+                miKi = new Ki(totalKi, agiMaximo, conMaximo, desMaximo, fueMaximo, podMaximo, volMaximo, agi, con, des, fue, pod, vol);
+                jugador = new Jugador(miKi, txtNombreJugador.Text);
+                
                 MessageBox.Show("Las Stats estan aplicadas", "Cambios Aplicados", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
@@ -73,12 +77,17 @@ namespace VentanaKi
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            Form ventanaPoderes = new VentanaPoderes(nuevoPoder);
+            Form ventanaPoderes = new VentanaPoderes(jugador);
             DialogResult result = ventanaPoderes.ShowDialog();
 
             if(result == DialogResult.OK)
             {
-                comboBoxPoderes.Items.Add(nuevoPoder.Nombre);
+                foreach(Poder p in jugador.Poderes)
+                {
+                    comboBoxPoderes.Items.Add(p.Nombre);
+                }
+                
+             
             }
         }
     }
