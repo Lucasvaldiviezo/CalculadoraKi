@@ -93,6 +93,8 @@
             this.richTextBoxDescripcion = new System.Windows.Forms.RichTextBox();
             this.comboBoxPoderes = new System.Windows.Forms.ComboBox();
             this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnRestarKi = new System.Windows.Forms.Button();
+            this.btnActivarPoder = new System.Windows.Forms.Button();
             this.gbKi.SuspendLayout();
             this.gpPoderes.SuspendLayout();
             this.SuspendLayout();
@@ -117,6 +119,7 @@
             // 
             // gbKi
             // 
+            this.gbKi.Controls.Add(this.btnRestarKi);
             this.gbKi.Controls.Add(this.btnAplicar);
             this.gbKi.Controls.Add(this.btnCargar);
             this.gbKi.Controls.Add(this.lblBarra7);
@@ -173,7 +176,7 @@
             // btnAplicar
             // 
             this.btnAplicar.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAplicar.Location = new System.Drawing.Point(225, 487);
+            this.btnAplicar.Location = new System.Drawing.Point(257, 487);
             this.btnAplicar.Name = "btnAplicar";
             this.btnAplicar.Size = new System.Drawing.Size(80, 53);
             this.btnAplicar.TabIndex = 15;
@@ -184,7 +187,7 @@
             // btnCargar
             // 
             this.btnCargar.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCargar.Location = new System.Drawing.Point(86, 487);
+            this.btnCargar.Location = new System.Drawing.Point(45, 487);
             this.btnCargar.Name = "btnCargar";
             this.btnCargar.Size = new System.Drawing.Size(75, 53);
             this.btnCargar.TabIndex = 16;
@@ -619,6 +622,7 @@
             // 
             // gpPoderes
             // 
+            this.gpPoderes.Controls.Add(this.btnActivarPoder);
             this.gpPoderes.Controls.Add(this.lblCostoVol);
             this.gpPoderes.Controls.Add(this.txtCostoVol);
             this.gpPoderes.Controls.Add(this.lblCostoPod);
@@ -821,13 +825,35 @@
             // btnAgregar
             // 
             this.btnAgregar.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Location = new System.Drawing.Point(139, 494);
+            this.btnAgregar.Location = new System.Drawing.Point(244, 487);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 53);
             this.btnAgregar.TabIndex = 18;
             this.btnAgregar.Text = "Agregar Poder";
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // btnRestarKi
+            // 
+            this.btnRestarKi.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRestarKi.Location = new System.Drawing.Point(151, 487);
+            this.btnRestarKi.Name = "btnRestarKi";
+            this.btnRestarKi.Size = new System.Drawing.Size(75, 53);
+            this.btnRestarKi.TabIndex = 93;
+            this.btnRestarKi.Text = "Restar Ki";
+            this.btnRestarKi.UseVisualStyleBackColor = true;
+            this.btnRestarKi.Click += new System.EventHandler(this.btnRestarKi_Click);
+            // 
+            // btnActivarPoder
+            // 
+            this.btnActivarPoder.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActivarPoder.Location = new System.Drawing.Point(43, 487);
+            this.btnActivarPoder.Name = "btnActivarPoder";
+            this.btnActivarPoder.Size = new System.Drawing.Size(75, 53);
+            this.btnActivarPoder.TabIndex = 74;
+            this.btnActivarPoder.Text = "Activar Poder";
+            this.btnActivarPoder.UseVisualStyleBackColor = true;
+            this.btnActivarPoder.Click += new System.EventHandler(this.btnActivarPoder_Click);
             // 
             // VentanaKi
             // 
@@ -916,6 +942,8 @@
         private System.Windows.Forms.Label lblCostoAgi;
         private System.Windows.Forms.TextBox txtCostoAgi;
         private System.Windows.Forms.TextBox txtCostoFue;
+        private System.Windows.Forms.Button btnRestarKi;
+        private System.Windows.Forms.Button btnActivarPoder;
     }
 }
 

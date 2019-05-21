@@ -61,6 +61,7 @@ namespace Sistema
         {
             get { return descripcion; }
         }
+        
 
         public static bool operator ==(Poder p1, Poder p2)
         {
@@ -77,5 +78,7 @@ namespace Sistema
         {
             return !(p1 == p2);
         }
+
+       
     }
 }

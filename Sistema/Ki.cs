@@ -32,27 +32,39 @@ namespace Sistema
         }
         public double Agilidad
         {
+            set { actualAgi = value;}
             get { return actualAgi; }
         }
         public double Constitucion
         {
+            set { actualCon = value;}
             get { return actualCon; }
         }
         public double Destreza
         {
+            set { actualDes = value;}
             get { return actualDes; }
         }
         public double Fuerza
         {
+            set { actualFue = value;}
             get { return actualFue; }
         }
         public double Poder
         {
+            set { actualPod = value;}
             get { return actualPod; }
         }
         public double Voluntad
         {
+            set { actualVol = value; }
             get { return actualVol; }
+        }
+
+        public double TotalKi
+        {
+            set { totalKi = value; }
+            get { return totalKi; }
         }
 
         public void CargarKi()
@@ -100,39 +112,78 @@ namespace Sistema
                 actualVol = volMaximo;
             }   
         }
-        public void RestarKi()
+        public void RestarKi(double costoAgi, double costoCon, double costoDes, double costoFue, double costoPod, double costoVol, double costoKiTotal)
         {
-            if(actualAgi > 0)
+            if(ValidarResta(costoAgi,actualAgi,0))
             {
-                actualAgi -= agiCarga;
-            }
-            if(actualCon > 0)
+                actualAgi -= costoAgi;
+            }else
             {
-                actualCon -= conCarga;
+                actualAgi = 0;
             }
-            if(actualDes > 0)
+            if(ValidarResta(costoCon, actualCon, 0))
             {
-                actualDes -= desCarga;
-            }
-            if(actualFue > 0)
+                actualCon -= costoCon;
+            }else
             {
-                actualFue -= fueCarga;
+                actualCon = 0;
             }
-            if(actualPod > 0)
+            if(ValidarResta(costoDes, actualDes, 0))
             {
-                actualPod -= podCarga;
-            }
-            if(actualVol > 0)
+                actualDes -= costoDes;
+            }else
             {
-                actualVol -= volCarga;
+                actualDes = 0;
             }
-           
+            if(ValidarResta(costoFue, actualFue, 0))
+            {
+                actualFue -= costoFue;
+            }else
+            {
+                actualFue = 0;
+            }
+            if(ValidarResta(costoPod, actualPod, 0))
+            {
+                actualPod -= costoPod;
+            }else
+            {
+                actualPod = 0;
+            }
+            if(ValidarResta(costoVol, actualVol, 0))
+            {
+                actualVol -= costoVol;
+            }else
+            {
+                actualVol = 0;
+            }
+            if (ValidarResta(costoKiTotal, totalKi, 0))
+            {
+                totalKi -= costoKiTotal;
+            }
+            else
+            {
+                totalKi = 0;
+            }
+
         }
+
+        
 
         public bool ValidarCarga(double carga,double actual, double maximo)
         {
             bool retorno = false;
             if((actual + carga) <= maximo)
+            {
+                retorno = true;
+            }
+
+            return retorno;
+        }
+
+        public bool ValidarResta(double carga, double actual, double minimo)
+        {
+            bool retorno = false;
+            if ((actual - carga) >= minimo)
             {
                 retorno = true;
             }

@@ -55,6 +55,20 @@ namespace Sistema
             return retorno;
         }
 
+        public void ActivarPoder(string nombrePoder)
+        {
+            double costoKiTotal;
+            foreach (Poder p in this.poderes)
+            {
+                if (nombrePoder == p.Nombre)
+                {
+                    costoKiTotal = p.CostoAgi + p.CostoCon + p.CostoDes + p.CostoFue + p.CostoPod + p.CostoVol;
+                    KiPropio.RestarKi(p.CostoAgi, p.CostoCon, p.CostoDes, p.CostoFue, p.CostoPod, p.CostoVol,costoKiTotal);
+                    break;
+                }
+            }
+        }
+
         public string nombreUltimoPoder()
         {
             return Poderes.Last().Nombre;
@@ -64,6 +78,8 @@ namespace Sistema
         {
             return !(jugador == poder);
         }
+
+        
 
     }
 }

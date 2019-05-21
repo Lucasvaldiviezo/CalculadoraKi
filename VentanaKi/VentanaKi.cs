@@ -24,26 +24,6 @@ namespace VentanaKi
         private Ki miKi;
         private bool cambiosAplicados = false;
 
-        
-        private void btnCargar_Click(object sender, EventArgs e)
-        {
-            if(cambiosAplicados)
-            {
-                jugador.KiPropio.CargarKi();
-                txtAgiActual.Text = jugador.KiPropio.Agilidad.ToString();
-                txtConActual.Text = jugador.KiPropio.Constitucion.ToString();
-                txtDesActual.Text = jugador.KiPropio.Destreza.ToString();
-                txtFueActual.Text = jugador.KiPropio.Fuerza.ToString();
-                txtPodActual.Text = jugador.KiPropio.Poder.ToString();
-                txtVolActual.Text = jugador.KiPropio.Voluntad.ToString();
-            }else
-            {
-                MessageBox.Show("Debe cargar los datos y aplicar los cambios antes de Cargar Ki", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            
-           
-        }
-
         private void btnAplicar_Click(object sender, EventArgs e)
         {
             double agi, con, des, fue, pod, vol;
@@ -51,9 +31,10 @@ namespace VentanaKi
             double agiMaximo, conMaximo, desMaximo, fueMaximo, podMaximo, volMaximo;
             //Cargando Stats de Carga
             #region statscarga
-            
-            if (txtAgi.Text != "" && txtCon.Text != "" && txtDes.Text != "" && txtFue.Text != "" && txtPod.Text != "" && txtVol.Text != "" && txtKiTotal.Text != "" 
-                && txtAgiMaximo.Text != "" && txtConMaximo.Text != "" && txtDesMaximo.Text != "" && txtFueMaximo.Text != "" && txtPodMaximo.Text != "" && txtVolMaximo.Text != "")
+
+            if (txtAgi.Text != "" && txtCon.Text != "" && txtDes.Text != "" && txtFue.Text != "" && txtPod.Text != "" && txtVol.Text != "" && txtKiTotal.Text != ""
+                && txtAgiMaximo.Text != "" && txtConMaximo.Text != "" && txtDesMaximo.Text != "" && txtFueMaximo.Text != "" && txtPodMaximo.Text != "" && txtVolMaximo.Text != ""
+                && txtNombreJugador.Text != "")
             {
                 agi = Convert.ToDouble(txtAgi.Text);
                 con = Convert.ToDouble(txtCon.Text);
@@ -79,11 +60,51 @@ namespace VentanaKi
                 MessageBox.Show("No deje ningun campo vacio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             #endregion
-            //Cargando Stats de Maximo        
-            
-            
         }
 
+        private void btnCargar_Click(object sender, EventArgs e)
+        {
+            if(cambiosAplicados)
+            {
+                jugador.KiPropio.CargarKi();
+                txtAgiActual.Text = jugador.KiPropio.Agilidad.ToString();
+                txtConActual.Text = jugador.KiPropio.Constitucion.ToString();
+                txtDesActual.Text = jugador.KiPropio.Destreza.ToString();
+                txtFueActual.Text = jugador.KiPropio.Fuerza.ToString();
+                txtPodActual.Text = jugador.KiPropio.Poder.ToString();
+                txtVolActual.Text = jugador.KiPropio.Voluntad.ToString();
+            }else
+            {
+                MessageBox.Show("Carga los datos y aplica los datos antes de Cargar Ki", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnRestarKi_Click(object sender, EventArgs e)
+        {
+            if (cambiosAplicados)
+            {
+                double agi = Convert.ToDouble(txtAgi.Text);
+                double con = Convert.ToDouble(txtCon.Text);
+                double des = Convert.ToDouble(txtDes.Text);
+                double fue = Convert.ToDouble(txtFue.Text);
+                double pod = Convert.ToDouble(txtPod.Text);
+                double vol = Convert.ToDouble(txtVol.Text);
+                double totalKi = 0;
+                jugador.KiPropio.RestarKi(agi,con,des,fue,pod,vol,totalKi);
+                txtAgiActual.Text = jugador.KiPropio.Agilidad.ToString();
+                txtConActual.Text = jugador.KiPropio.Constitucion.ToString();
+                txtDesActual.Text = jugador.KiPropio.Destreza.ToString();
+                txtFueActual.Text = jugador.KiPropio.Fuerza.ToString();
+                txtPodActual.Text = jugador.KiPropio.Poder.ToString();
+                txtVolActual.Text = jugador.KiPropio.Voluntad.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Carga y aplica los datos antes de Restar Ki", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+       
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             if(cambiosAplicados)
@@ -98,7 +119,7 @@ namespace VentanaKi
                 }
             }else
             {
-                MessageBox.Show("Debe cargar los datos y aplicar los cambios antes de crear un poder", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Carga y aplica los datos antes de crear un poder", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
         }
@@ -118,6 +139,27 @@ namespace VentanaKi
                     txtCostoVol.Text = p.CostoVol.ToString();
                 }
             }
+        }
+
+        private void btnActivarPoder_Click(object sender, EventArgs e)
+        {
+            if(txtAgiActual.Text != "" && txtConActual.Text != "" && txtDesActual.Text != "" && txtFueActual.Text != "" && txtPodActual.Text != "" &&
+               txtVolActual.Text != "")
+            {
+                jugador.ActivarPoder(comboBoxPoderes.Text);
+                txtAgiActual.Text = jugador.KiPropio.Agilidad.ToString();
+                txtConActual.Text = jugador.KiPropio.Constitucion.ToString();
+                txtDesActual.Text = jugador.KiPropio.Destreza.ToString();
+                txtFueActual.Text = jugador.KiPropio.Fuerza.ToString();
+                txtPodActual.Text = jugador.KiPropio.Poder.ToString();
+                txtVolActual.Text = jugador.KiPropio.Voluntad.ToString();
+                txtKiTotal.Text = jugador.KiPropio.TotalKi.ToString();
+                MessageBox.Show("Habilidad Activada!", "Habilidad", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }else
+            {
+                MessageBox.Show("La carga de Ki no tiene valor para restar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
     }
 }
