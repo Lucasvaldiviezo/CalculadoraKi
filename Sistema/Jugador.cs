@@ -30,16 +30,35 @@ namespace Sistema
             get { return kiPropio; }
         }
 
-
-        public void AgregarPoder(Poder nuevoPoder)
+        public static Jugador operator +(Jugador jugador, Poder poder)
         {
-            poderes.Add(nuevoPoder);
+            if(jugador != poder)
+            {
+                jugador.Poderes.Add(poder);
+            }
+
+            return jugador;
         }
 
+        public static bool operator ==(Jugador jugador, Poder poder)
+        {
+            bool retorno = false;
+            foreach(Poder p in jugador.Poderes)
+            {
+                if(p == poder)
+                {
+                    retorno = true;
+                    break;
+                }
+            }
 
+            return retorno;
+        }
 
-       
+        public static bool operator !=(Jugador jugador, Poder poder)
+        {
+            return !(jugador == poder);
+        }
 
-        
     }
 }

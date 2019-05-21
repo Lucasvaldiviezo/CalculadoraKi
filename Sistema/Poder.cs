@@ -62,5 +62,20 @@ namespace Sistema
             get { return descripcion; }
         }
 
+        public static bool operator ==(Poder p1, Poder p2)
+        {
+            bool retorno = false;
+            if (p1.Nombre == p2.Nombre)
+            {
+                retorno = true;
+            }
+
+            return retorno;
+        }
+
+        public static bool operator !=(Poder p1, Poder p2)
+        {
+            return !(p1 == p2);
+        }
     }
 }

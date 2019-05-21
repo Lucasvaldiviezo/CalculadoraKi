@@ -43,7 +43,7 @@ namespace VentanaKi
                 vol = Convert.ToDouble(txtVol.Text);
                 descripcion = richTextBoxDescripcion.Text; 
                 nuevoPoder = new Poder(nombre, descripcion, agi, con, des, fue, pod, vol);
-                jugador.AgregarPoder(nuevoPoder);
+                jugador += nuevoPoder; 
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }else

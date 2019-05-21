@@ -22,17 +22,25 @@ namespace VentanaKi
 
         private Jugador jugador;
         private Ki miKi;
+        private bool cambiosAplicados = false;
 
         
         private void btnCargar_Click(object sender, EventArgs e)
         {
-            jugador.KiPropio.CargarKi();
-            txtAgiActual.Text = jugador.KiPropio.Agilidad.ToString();
-            txtConActual.Text = jugador.KiPropio.Constitucion.ToString();
-            txtDesActual.Text = jugador.KiPropio.Destreza.ToString();
-            txtFueActual.Text = jugador.KiPropio.Fuerza.ToString();
-            txtPodActual.Text = jugador.KiPropio.Poder.ToString();
-            txtVolActual.Text = jugador.KiPropio.Voluntad.ToString();
+            if(cambiosAplicados)
+            {
+                jugador.KiPropio.CargarKi();
+                txtAgiActual.Text = jugador.KiPropio.Agilidad.ToString();
+                txtConActual.Text = jugador.KiPropio.Constitucion.ToString();
+                txtDesActual.Text = jugador.KiPropio.Destreza.ToString();
+                txtFueActual.Text = jugador.KiPropio.Fuerza.ToString();
+                txtPodActual.Text = jugador.KiPropio.Poder.ToString();
+                txtVolActual.Text = jugador.KiPropio.Voluntad.ToString();
+            }else
+            {
+                MessageBox.Show("Debe cargar los datos y aplicar los cambios antes de Cargar Ki", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
            
         }
 
@@ -62,8 +70,9 @@ namespace VentanaKi
                 volMaximo = Convert.ToDouble(txtVolMaximo.Text);
                 miKi = new Ki(totalKi, agiMaximo, conMaximo, desMaximo, fueMaximo, podMaximo, volMaximo, agi, con, des, fue, pod, vol);
                 jugador = new Jugador(miKi, txtNombreJugador.Text);
-                
+                cambiosAplicados = true;
                 MessageBox.Show("Las Stats estan aplicadas", "Cambios Aplicados", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             }
             else
             {
@@ -77,17 +86,41 @@ namespace VentanaKi
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            Form ventanaPoderes = new VentanaPoderes(jugador);
-            DialogResult result = ventanaPoderes.ShowDialog();
-
-            if(result == DialogResult.OK)
+            if(cambiosAplicados)
             {
-                foreach(Poder p in jugador.Poderes)
+                Form ventanaPoderes = new VentanaPoderes(jugador);
+                DialogResult result = ventanaPoderes.ShowDialog();
+
+                if (result == DialogResult.OK)
                 {
-                    comboBoxPoderes.Items.Add(p.Nombre);
+                    comboBoxPoderes.ResetText();
+                    foreach (Poder p in jugador.Poderes)
+                    {
+                        comboBoxPoderes.Items.Add(p.Nombre);
+                        comboBoxPoderes.SelectedText = p.Nombre;
+                    }
                 }
-                
-             
+            }else
+            {
+                MessageBox.Show("Debe cargar los datos y aplicar los cambios antes de crear un poder", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
+        }
+
+        private void comboBoxPoderes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            foreach (Poder p in jugador.Poderes)
+            {
+                if (p.Nombre == comboBoxPoderes.Text)
+                {
+                    richTextBoxDescripcion.Text = p.Descripcion;
+                    txtCostoAgi.Text = p.CostoAgi.ToString();
+                    txtCostoCon.Text = p.CostoCon.ToString();
+                    txtCostoDes.Text = p.CostoDes.ToString();
+                    txtCostoFue.Text = p.CostoFue.ToString();
+                    txtCostoPod.Text = p.CostoPod.ToString();
+                    txtCostoVol.Text = p.CostoVol.ToString();
+                }
             }
         }
     }

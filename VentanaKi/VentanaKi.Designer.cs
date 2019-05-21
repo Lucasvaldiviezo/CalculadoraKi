@@ -808,12 +808,15 @@
             // 
             // comboBoxPoderes
             // 
+            this.comboBoxPoderes.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.comboBoxPoderes.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxPoderes.FormattingEnabled = true;
             this.comboBoxPoderes.Location = new System.Drawing.Point(118, 60);
             this.comboBoxPoderes.Name = "comboBoxPoderes";
             this.comboBoxPoderes.Size = new System.Drawing.Size(121, 26);
             this.comboBoxPoderes.TabIndex = 17;
+            this.comboBoxPoderes.Text = "-";
+            this.comboBoxPoderes.SelectedIndexChanged += new System.EventHandler(this.comboBoxPoderes_SelectedIndexChanged);
             // 
             // btnAgregar
             // 
